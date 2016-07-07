@@ -14,22 +14,6 @@
         android:orientation="vertical"
         >
 
-        <TextView
-            android:id="@+id/tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="niidddddddddddddddddddddddd"
-            android:textColor="#000"
-            />
-
-        <Button
-            android:id="@+id/btn_enter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="进入主页"
-            />
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -50,15 +34,6 @@
                 android:text="测试json解析"
                 />
 
-            <Button
-                android:id="@+id/btn_test_simplenet"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="simplenet测试"
-                android:visibility="gone"
-                />
-
-
 
             <Button
                 android:id="@+id/btn_test_threadpool"
@@ -68,8 +43,15 @@
                 />
 
 
-
         </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_test_simplenet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="simplenet测试"
+            android:visibility="visible"
+            />
 
         <TextView
             android:id="@+id/tv_progress"
@@ -90,54 +72,6 @@
             android:text="测试结果显示区域"
             android:textColor="#000"
             />
-
-        <Button
-            android:id="@+id/btn_imageloader"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="测试imageloader"
-            />
-
-
-        <ImageView
-            android:id="@+id/iv_test"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:background="#ccc"
-            />
-
-
-        <Button
-            android:id="@+id/btn_picasso"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="测试picasso"
-            />
-
-
-        <ImageView
-            android:id="@+id/iv_picasso_test"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:background="#ccc"
-            />
-
-
-        <Button
-            android:id="@+id/btn_glide"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="测试glide"
-            />
-
-
-        <ImageView
-            android:id="@+id/iv_glide_test"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:background="#ccc"
-            />
-
 
 
     </LinearLayout>
