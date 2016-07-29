@@ -10,6 +10,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -30,8 +31,6 @@ import java.io.File;
 import butterknife.InjectView;
 
 public class SplashActivity extends BaseActivity {
-    @InjectView(R.id.tv)
-    TextView mTv;
     @InjectView(R.id.btn_test_httpclient)
     Button mBtnTestHttpclient;
     @InjectView(R.id.tv_result)
@@ -44,6 +43,8 @@ public class SplashActivity extends BaseActivity {
     Button mSimpleButton;
     @InjectView(R.id.btn_test_threadpool)
     Button mThreadPoolButton;
+    @InjectView(R.id.ll_container)
+    LinearLayout mLinearLayout;
     private DoubleClickExitHelper mDoubleClickExit;
     // 1、构建请求队列
     RequestQueue mQueue = SimpleNet.newRequestQueue();
@@ -60,12 +61,7 @@ public class SplashActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        mTv.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                SplashActivity.super.mLoadingDialog.hideLoading();
-            }
-        }, 5000);
+        super.mLoadingDialog.hideLoading();
 
         threadPoolTest();
 
