@@ -1,7 +1,5 @@
 package com.ht.fyforandroid;
 
-import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Environment;
 import android.text.Html;
@@ -13,8 +11,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.ht.fyforandroid.base.BaseActivity;
+import com.ht.fyforandroid.net.MultiThreadDownloader.bizs.DLManager;
+import com.ht.fyforandroid.net.MultiThreadDownloader.interfaces.SimpleDListener;
 import com.ht.fyforandroid.net.asynctasknet.Request;
 import com.ht.fyforandroid.net.asynctasknet.callback.JsonCallBack;
 import com.ht.fyforandroid.net.asynctasknet.callback.StringCallBack;
@@ -45,9 +44,17 @@ public class SplashActivity extends BaseActivity {
     Button mThreadPoolButton;
     @InjectView(R.id.ll_container)
     LinearLayout mLinearLayout;
+    @InjectView(R.id.btn_down_test)
+    Button mBtnDownTest;
+    @InjectView(R.id.tv_progress_1)
+    TextView mTvProgress1;
     private DoubleClickExitHelper mDoubleClickExit;
     // 1、构建请求队列
     RequestQueue mQueue = SimpleNet.newRequestQueue();
+
+    String downStr = "http://dlsw.baidu.com/sw-search-sp/soft/7b/33461/freeime.1406862029.exe";
+    private String saveDir = Environment.getExternalStorageDirectory() + "/AigeStudio/";
+
 
     @Override
     protected int getLayoutId() {
@@ -61,6 +68,7 @@ public class SplashActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+
         super.mLoadingDialog.hideLoading();
 
         threadPoolTest();
@@ -69,6 +77,37 @@ public class SplashActivity extends BaseActivity {
 
         simpleNetTest();
 
+        DLManager.getInstance(SplashActivity.this).setMaxTask(2);
+        downTest();
+
+    }
+
+    private void downTest() {
+        mBtnDownTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DLManager.getInstance(SplashActivity.this).dlStart(downStr, saveDir,
+                        null, null, new SimpleDListener(){
+                            @Override
+                            public void onStart(String fileName, String realUrl, int fileLength) {
+//                                mTvProgress1.setText(fileLength + "");
+                                Log.d("down...", fileName);
+                            }
+
+                            @Override
+                            public void onProgress(int progress) {
+//                                mTvProgress1.setText(progress + "");
+                                Log.d("down...", progress + "");
+                            }
+
+                            @Override
+                            public void onError(int status, String error) {
+//                                mTvProgress1.setText(error);
+                                Log.d("down...", error);
+                            }
+                        });
+            }
+        });
     }
 
 
