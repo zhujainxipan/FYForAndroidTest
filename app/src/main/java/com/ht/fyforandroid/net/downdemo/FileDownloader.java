@@ -32,7 +32,7 @@ public class FileDownloader {
 
     private Context context;
 
-    private FileService fileService;
+    private DownLoadDao mDownLoadDao;
 
 
 
@@ -138,7 +138,7 @@ public class FileDownloader {
 
         this.data.put(threadId, pos);
 
-        this.fileService.update(this.downloadUrl, this.data);
+        this.mDownLoadDao.update(this.downloadUrl, this.data);
 
     }
 
@@ -164,7 +164,7 @@ public class FileDownloader {
 
             this.downloadUrl = downloadUrl;
 
-            fileService = new FileService(this.context);
+            mDownLoadDao = new DownLoadDao(this.context);
 
             URL url = new URL(this.downloadUrl);
 
@@ -210,7 +210,7 @@ public class FileDownloader {
 
                 this.saveFile = new File(fileSaveDir, filename);//构建保存文件
 
-                Map<Integer, Integer> logdata = fileService.getData(downloadUrl);//获取下载记录
+                Map<Integer, Integer> logdata = mDownLoadDao.getData(downloadUrl);//获取下载记录
 
 
 
@@ -380,7 +380,7 @@ public class FileDownloader {
 
 
 
-            this.fileService.save(this.downloadUrl, this.data);
+            this.mDownLoadDao.save(this.downloadUrl, this.data);
 
             boolean notFinish = true;//下载未完成
 
@@ -424,7 +424,7 @@ public class FileDownloader {
 
 
 
-            fileService.delete(this.downloadUrl);
+            mDownLoadDao.delete(this.downloadUrl);
 
         } catch (Exception e) {
 
