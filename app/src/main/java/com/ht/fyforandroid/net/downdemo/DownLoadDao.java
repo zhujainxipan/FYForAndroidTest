@@ -88,12 +88,8 @@ public class DownLoadDao {
      */
 
     public void delete(String path) {
-
         SQLiteDatabase db = openHelper.getWritableDatabase();
-
         db.execSQL("delete from filedownlog where downpath=?", new Object[]{path});
-
         db.close();
-
     }
 }

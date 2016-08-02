@@ -138,7 +138,6 @@ public class SplashActivity extends BaseActivity {
             public void run() {
                 FileDownloader loader = new FileDownloader(SplashActivity.this, path, savedir, 3);
                 mProgressBar.setMax(loader.getFileSize());//设置进度条的最大刻度为文件的长度
-
                 try {
                     loader.download(new DownloadProgressListener() {
                         @Override
