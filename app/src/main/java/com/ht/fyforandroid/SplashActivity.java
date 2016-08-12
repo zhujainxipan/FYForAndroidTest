@@ -118,7 +118,6 @@ public class SplashActivity extends BaseActivity {
 
     private void doBigImgTest() {
         Intent intent = new Intent(SplashActivity.this, BigImgTestActivity.class);
-
         startActivity(intent);
     }
 
