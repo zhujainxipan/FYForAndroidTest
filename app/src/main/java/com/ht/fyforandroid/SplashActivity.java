@@ -1,5 +1,6 @@
 package com.ht.fyforandroid;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -52,6 +53,8 @@ public class SplashActivity extends BaseActivity {
     Button mButton;
     @InjectView(R.id.path)
     EditText mEditText;
+    @InjectView(R.id.btn_bigimg)
+    Button mBtnBigImg;
     private DoubleClickExitHelper mDoubleClickExit;
     // 1、构建请求队列
     RequestQueue mQueue = SimpleNet.newRequestQueue();
@@ -105,8 +108,18 @@ public class SplashActivity extends BaseActivity {
         sysNetTest();
 
         simpleNetTest();
+
         downTest();
 
+        doBigImgTest();
+
+
+    }
+
+    private void doBigImgTest() {
+        Intent intent = new Intent(SplashActivity.this, BigImgTestActivity.class);
+
+        startActivity(intent);
     }
 
     private void downTest() {
