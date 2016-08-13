@@ -35,9 +35,6 @@ public class BigImgTestActivity extends BaseActivity {
     @Override
     protected void init(Bundle savedInstanceState) {
         super.mLoadingDialog.hideLoading();
-
-//        imageView.setMinimumScaleType(SubsamplingScaleImageView.SCALE_TYPE_CUSTOM);
-//        imageView.setMinScale(1.0F);
         final String testUrl = "http://n2.hdfimg.com/g9/M00/1E/B4/uoYBAFepon-AKjTRANKobLODE_M932.jpg";
         final File downDir = Environment.getExternalStorageDirectory();
         //使用Glide下载图片,保存到本地
