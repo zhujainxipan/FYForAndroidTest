@@ -55,6 +55,8 @@ public class SplashActivity extends BaseActivity {
     EditText mEditText;
     @InjectView(R.id.btn_bigimg)
     Button mBtnBigImg;
+    @InjectView(R.id.btn_recycleview)
+    Button mBtnrv;
     private DoubleClickExitHelper mDoubleClickExit;
     // 1、构建请求队列
     RequestQueue mQueue = SimpleNet.newRequestQueue();
@@ -113,12 +115,29 @@ public class SplashActivity extends BaseActivity {
 
         doBigImgTest();
 
+        doRecycleViewTest();
+
 
     }
 
+    private void doRecycleViewTest() {
+        mBtnrv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SplashActivity.this, RecycleViewTestActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
     private void doBigImgTest() {
-        Intent intent = new Intent(SplashActivity.this, BigImgTestActivity.class);
-        startActivity(intent);
+        mBtnBigImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SplashActivity.this, BigImgTestActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void downTest() {

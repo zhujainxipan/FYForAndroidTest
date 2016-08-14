@@ -52,6 +52,7 @@
         </activity>
 
         <activity android:name=".BigImgTestActivity"/>
+        <activity android:name=".RecycleViewTestActivity"/>
 
 
     </application>
