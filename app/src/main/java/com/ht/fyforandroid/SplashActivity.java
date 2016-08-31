@@ -14,6 +14,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.drawee.view.SimpleDraweeView;
 import com.ht.fyforandroid.base.BaseActivity;
 import com.ht.fyforandroid.net.asynctasknet.Request;
 import com.ht.fyforandroid.net.asynctasknet.callback.JsonCallBack;
@@ -57,6 +58,8 @@ public class SplashActivity extends BaseActivity {
     Button mBtnBigImg;
     @InjectView(R.id.btn_recycleview)
     Button mBtnrv;
+    @InjectView(R.id.my_image_view)
+    SimpleDraweeView testIv;
     private DoubleClickExitHelper mDoubleClickExit;
     // 1、构建请求队列
     RequestQueue mQueue = SimpleNet.newRequestQueue();
@@ -117,7 +120,11 @@ public class SplashActivity extends BaseActivity {
 
         doRecycleViewTest();
 
+        doFrescoTest();
+    }
 
+    private void doFrescoTest() {
+        testIv.setImageURI("https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/logo_white_fe6da1ec.png");
     }
 
     private void doRecycleViewTest() {

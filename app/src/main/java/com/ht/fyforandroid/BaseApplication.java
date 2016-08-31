@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.support.v4.app.FragmentActivity;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -27,6 +28,9 @@ public class BaseApplication extends Application {
 
         // 配置imageloader
         initImageLoader();
+
+        // 初始化Fresco
+        Fresco.initialize(this);
     }
 
     private void initImageLoader() {

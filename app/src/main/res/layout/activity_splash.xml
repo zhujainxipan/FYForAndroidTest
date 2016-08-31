@@ -2,6 +2,7 @@
 
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -129,6 +130,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="recycleview测试"
+            />
+
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/my_image_view"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            fresco:viewAspectRatio="1"
+            fresco:fadeDuration="300"
+            fresco:actualImageScaleType="fitCenter"
+            fresco:placeholderImage="@mipmap/ic_launcher"
+            fresco:failureImage="@mipmap/ic_launcher"
+            fresco:roundAsCircle="true"
+            fresco:roundedCornerRadius="10dp"
+            fresco:roundTopLeft="true"
+            fresco:roundTopRight="true"
+            fresco:roundBottomLeft="true"
+            fresco:roundBottomRight="true"
+            fresco:roundingBorderWidth="1dp"
+            fresco:roundingBorderColor="#00ffff"
             />
 
 
