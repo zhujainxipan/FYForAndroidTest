@@ -7,8 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.ht.fyforandroid.R;
-
 /**
  * Created by niehongtao on 16/10/31.
  */
