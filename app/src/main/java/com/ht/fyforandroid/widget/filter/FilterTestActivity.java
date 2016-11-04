@@ -36,7 +36,6 @@ public class FilterTestActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        super.mLoadingDialog.hideLoading();
         initFilterView();
     }
 
