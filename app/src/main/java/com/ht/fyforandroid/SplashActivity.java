@@ -28,6 +28,7 @@ import com.ht.fyforandroid.net.simplenet.requests.StringRequest;
 import com.ht.fyforandroid.net.threadpoolnet.RequestManager;
 import com.ht.fyforandroid.net.threadpoolnet.request.RequestCallback;
 import com.ht.fyforandroid.util.DoubleClickExitHelper;
+import com.ht.fyforandroid.widget.filter.FilterTestActivity;
 
 import java.io.File;
 
@@ -60,6 +61,8 @@ public class SplashActivity extends BaseActivity {
     Button mBtnrv;
     @InjectView(R.id.my_image_view)
     SimpleDraweeView testIv;
+    @InjectView(R.id.btn_filter)
+    Button btnFilter;
     private DoubleClickExitHelper mDoubleClickExit;
     // 1、构建请求队列
     RequestQueue mQueue = SimpleNet.newRequestQueue();
@@ -121,6 +124,18 @@ public class SplashActivity extends BaseActivity {
         doRecycleViewTest();
 
         doFrescoTest();
+
+        doFilter();
+    }
+
+    private void doFilter() {
+        btnFilter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SplashActivity.this, FilterTestActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void doFrescoTest() {
