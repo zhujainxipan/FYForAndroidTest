@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="white">#ffffff</color>
     <color name="gray">#cccccc</color>
 
     <color name="drop_down_selected">#7B1FA2</color>
@@ -28,17 +32,5 @@
     <color name="divide_line">#ffdddddd</color>
 
     <color name="divide">#ffeeeeee</color>
-
-
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
-
-    <!-- 分割线颜色 -->
-    <color name="divider_color">#333333</color>
-    <!-- 选中颜色 -->
-    <color name="filter_bg">#eeeeee</color>
-    <color name="white">#ffffff</color>
-
 
 </resources>
