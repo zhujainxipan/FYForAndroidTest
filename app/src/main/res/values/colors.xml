@@ -33,4 +33,10 @@
 
     <color name="divide">#ffeeeeee</color>
 
+    <!-- 分割线颜色 -->
+    <color name="divider_color">#333333</color>
+    <!-- 选中颜色 -->
+    <color name="filter_bg">#eeeeee</color>
+
+
 </resources>
