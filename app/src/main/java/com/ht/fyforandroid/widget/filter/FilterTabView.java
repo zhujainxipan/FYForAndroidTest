@@ -7,7 +7,8 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.zrp.filterviewdemo.R;
+import com.ht.fyforandroid.R;
+
 
 /**
  * 自定义的筛选器单个view，自处理选中效果，抛出点击事件处理

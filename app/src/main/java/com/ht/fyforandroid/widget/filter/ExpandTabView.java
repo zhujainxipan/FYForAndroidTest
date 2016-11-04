@@ -8,8 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.zrp.filterviewdemo.NoHorizontalScrollViewPager;
-import com.zrp.filterviewdemo.R;
+
+import com.ht.fyforandroid.R;
 
 import java.util.ArrayList;
 
